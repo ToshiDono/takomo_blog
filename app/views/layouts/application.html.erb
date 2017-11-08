@@ -23,15 +23,15 @@
     <div class="container container-fluid">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><%= link_to 'На главную', root_path %></li>
+          <li><%= link_to t('layouts.application.links.on_global'), root_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-              <li><%= link_to 'Профиль', edit_user_registration_path %></li>
-              <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to t('layouts.application.links.profile'), edit_user_registration_path %></li>
+              <li><%= link_to t('actions.sign_out'), destroy_user_session_path, method: :delete %></li>
           <% else %>
-              <li><%= link_to 'Регистрация', new_user_registration_path %></li>
-              <li><%= link_to 'Войти', new_user_session_path %></li>
+              <li><%= link_to t('actions.sign_up'), new_user_registration_path %></li>
+              <li><%= link_to t('actions.log_in'), new_user_session_path %></li>
           <%	end %>
         </ul>
       </div>
