@@ -16,10 +16,13 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'faker'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '~> 0.49.1', require: false
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.0'
 end
 
 group :development do
