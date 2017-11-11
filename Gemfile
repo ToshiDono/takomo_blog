@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 ruby '~> 2.4.0'
 
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
+gem 'jquery-rails'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 gem 'sass-rails', '~> 5.0'

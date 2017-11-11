@@ -39,6 +39,9 @@ ru:
       current: 'Текущий'
   home:
     title: 'Добро пожаловать'
+  article:
+    new:
+      title: 'Новая статья'
   layouts:
     application:
       links:
