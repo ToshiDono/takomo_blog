@@ -2,14 +2,18 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  def show; end
+  def show
+    authorize! :read, @article
+  end
 
   def new
     @article = Article.new.decorate
+    authorize! :write, @article
   end
 
   def create
     @article = current_user.articles.create(article_params)
+    authorize! :write, @article
     if @article.save
       redirect_to @article, notice: t('article.create.notice')
     else
@@ -17,10 +21,14 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize! :update, @article
+  end
 
   def update
-    if @article.update(article_params)
+    authorize! :update, @article
+    params = article_params.merge(user_id: current_user.id)
+    if @article.update(params)
       redirect_to @article, notice: t('article.update.notice')
     else
       render :new
@@ -28,6 +36,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, @article
     @article.destroy
     redirect_to articles_url, notice: t('article.destroy.notice')
   end

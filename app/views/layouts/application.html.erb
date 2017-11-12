@@ -44,6 +44,11 @@
               </li>
           <% else %>
               <li>
+                <%= link_to "#{t('pronouns.plyral.all').capitalize}
+                            #{t('article.entities').downcase}",
+                            feeds_path %>
+              </li>
+              <li>
                 <%= link_to t('actions.sign_up'),
                             new_user_registration_path %>
               </li>
