@@ -1,7 +1,7 @@
 ru:
   actions:
-    create: 'Создать'
-    edit: 'Изменить'
+    create: 'Написать'
+    edit: 'Редактировать'
     update: 'Изменить'
     delete: 'Удалить'
     back: 'Назад'
@@ -40,8 +40,13 @@ ru:
   home:
     title: 'Добро пожаловать'
   article:
-    new:
-      title: 'Новая статья'
+    entity: 'статью'
+    create:
+      notice: 'Статья успешно создана'
+    update:
+      notice: 'Статья успешно изменена'
+    destroy:
+      notice: 'Статья успешно удалена'
   layouts:
     application:
       links:

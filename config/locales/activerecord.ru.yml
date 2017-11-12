@@ -11,3 +11,4 @@ ru:
         password: 'Пароль'
       article:
         title: 'Заголовок'
+        text: 'Текст'
