@@ -13,6 +13,9 @@ ru:
   pronouns:
     my: 'мой'
     new: 'новый'
+    plyral:
+      all: 'все'
+      my: 'мои'
   user:
     sign_up:
       title: 'Зарегистрироваться'
@@ -41,6 +44,7 @@ ru:
     title: 'Добро пожаловать'
   article:
     entity: 'статью'
+    entities: 'статьи'
     create:
       notice: 'Статья успешно создана'
     update:
