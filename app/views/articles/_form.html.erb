@@ -1,0 +1,10 @@
+<div class="thumbnail">
+  <div class="caption">
+    <h1><%= @article.pages_title %> <%= t('article.entity').downcase %></h1>
+    <%= simple_form_for @article do |f|%>
+        <%= f.input :title %>
+        <%= f.input :text, as: :text %>
+        <%= f.button :submit, t('actions.save') %>
+    <% end%>
+  </div>
+</div>

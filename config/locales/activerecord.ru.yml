@@ -1,10 +1,14 @@
 ru:
- activerecord:
-  models:
-   user: 'Пользователь'
-  attributes:
-   user:
-    name: 'Имя'
-    surname: 'Фамилия'
-    email: 'Email'
-    password: 'Пароль'
+  activerecord:
+    models:
+      user: 'Пользователь'
+      article: 'Статья'
+    attributes:
+      user:
+        name: 'Имя'
+        surname: 'Фамилия'
+        email: 'Email'
+        password: 'Пароль'
+      article:
+        title: 'Заголовок'
+        text: 'Текст'

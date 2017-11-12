@@ -5,16 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous">
-
-    </script>
   </head>
 
   <body>
@@ -27,11 +18,39 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-              <li><%= link_to t('layouts.application.links.profile'), edit_user_registration_path %></li>
-              <li><%= link_to t('actions.sign_out'), destroy_user_session_path, method: :delete %></li>
+              <li>
+                <%= link_to "#{t('pronouns.plyral.my').capitalize}
+                            #{t('article.entities').downcase}",
+                            blog_path(current_user.id) %>
+              </li>
+              <li>
+                <%= link_to "#{t('pronouns.plyral.all').capitalize}
+                            #{t('article.entities').downcase}",
+                            feeds_path %>
+              </li>
+              <li>
+                <%= link_to "#{t('actions.create')}
+                            #{t('article.entity').downcase}",
+                            new_article_path %>
+              </li>
+              <li>
+                <%= link_to t('layouts.application.links.profile'),
+                            edit_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to t('actions.sign_out'),
+                            destroy_user_session_path,
+                            method: :delete %>
+              </li>
           <% else %>
-              <li><%= link_to t('actions.sign_up'), new_user_registration_path %></li>
-              <li><%= link_to t('actions.log_in'), new_user_session_path %></li>
+              <li>
+                <%= link_to t('actions.sign_up'),
+                            new_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to t('actions.log_in'),
+                            new_user_session_path %>
+              </li>
           <%	end %>
         </ul>
       </div>
@@ -46,7 +65,10 @@
         <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+    <div class="container">
       <%= yield %>
+    </div>
+
   </div>
   </body>
 </html>

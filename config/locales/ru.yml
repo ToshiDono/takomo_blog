@@ -1,7 +1,7 @@
 ru:
   actions:
-    create: 'Создать'
-    edit: 'Изменить'
+    create: 'Написать'
+    edit: 'Редактировать'
     update: 'Изменить'
     delete: 'Удалить'
     back: 'Назад'
@@ -13,6 +13,9 @@ ru:
   pronouns:
     my: 'мой'
     new: 'новый'
+    plyral:
+      all: 'все'
+      my: 'мои'
   user:
     sign_up:
       title: 'Зарегистрироваться'
@@ -39,6 +42,15 @@ ru:
       current: 'Текущий'
   home:
     title: 'Добро пожаловать'
+  article:
+    entity: 'статью'
+    entities: 'статьи'
+    create:
+      notice: 'Статья успешно создана'
+    update:
+      notice: 'Статья успешно изменена'
+    destroy:
+      notice: 'Статья успешно удалена'
   layouts:
     application:
       links:
