@@ -18,6 +18,8 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+              <li><%= link_to 'Мои статьи', blog_path(current_user.id) %></li>
+              <li><%= link_to 'Все статьи', feeds_path %></li>
               <li><%= link_to 'Написать статью', new_article_path %></li>
               <li><%= link_to t('layouts.application.links.profile'), edit_user_registration_path %></li>
               <li><%= link_to t('actions.sign_out'), destroy_user_session_path, method: :delete %></li>

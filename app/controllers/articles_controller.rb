@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params).decorate
+    @article = current_user.articles.create(article_params)
     if @article.save
       redirect_to @article, notice: t('article.create.notice')
     else
@@ -39,6 +39,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :user_id)
   end
 end
