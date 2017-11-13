@@ -9,11 +9,11 @@ gem 'cancancan', '~> 2.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
-gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 
@@ -37,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner', '~> 1.6', '>= 1.6.1'
   gem 'simplecov', require: false
 end
 
