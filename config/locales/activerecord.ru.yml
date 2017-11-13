@@ -3,6 +3,7 @@ ru:
     models:
       user: 'Пользователь'
       article: 'Статья'
+      comment: 'Комментарий'
     attributes:
       user:
         name: 'Имя'
@@ -12,3 +13,5 @@ ru:
       article:
         title: 'Заголовок'
         text: 'Текст'
+      comment:
+        body: 'Текст'

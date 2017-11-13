@@ -51,6 +51,12 @@ ru:
       notice: 'Статья успешно изменена'
     destroy:
       notice: 'Статья успешно удалена'
+  comment:
+    title: 'Комментарии'
+    destroy:
+      notice: 'Комментарий успешно удален'
+  messages:
+    confirm: 'Вы уверены?'
   layouts:
     application:
       links:
@@ -59,3 +65,4 @@ ru:
   errors:
     messages:
       access_denied: 'Доступ запрещен'
+

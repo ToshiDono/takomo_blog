@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :feeds, only: [:index]
   end
 
+  resources :articles do
+    resources :comments
+  end
+
   devise_for :user
   root 'home#index'
 end
