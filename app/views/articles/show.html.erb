@@ -1,17 +1,47 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><%= @article.title %></h3>
+    <p class="blog-post-meta"><%= @article.human_created_at %> <%= @article.users_full_name %></p>
   </div>
   <div class="panel-body">
     <%= @article.text %>
   </div>
 </div>
-<!--< %= link_to t('actions.back'), articles_path, class: 'btn btn-default btn-m' %>-->
+
 <% if can? :update, @article %>
-    <%= link_to t('actions.edit'), edit_article_path(@article.id), class: 'btn btn-default btn-m' %>
-    <%= link_to t('actions.delete'), article_path(@article.id),
+    <%= link_to t('actions.edit'),
+                edit_article_path(@article.id),
+                class: 'btn btn-default btn-m' %>
+
+    <%= link_to t('actions.delete'),
+                article_path(@article.id),
                 method: :delete,
                 data: { confirm: t('user.edit.messages.confirm') },
                 class: 'btn btn-default btn-m' %>
 <% end %>
+<br><br>
 
+<% if @article.comments.size > 0 %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t('comment.title') %></h3>
+    </div>
+    <div class="panel-body">
+      <%= render @article.comments %>
+    </div>
+  </div>
+<% end %>
+
+
+<% if can? :create, @article %>
+  <div class="thumbnail">
+    <div class="caption">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= t('actions.create') %> <%= t('activerecord.models.comment').downcase %>
+        </h3>
+        <%= render 'comments/form' %>
+      </div>
+    </div>
+  </div>
+<% end %>

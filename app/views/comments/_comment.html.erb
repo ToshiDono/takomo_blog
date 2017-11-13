@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong class="panel-title">
+      <%= comment.user.name %> <%= comment.user.surname %>
+    </strong>
+    <span class="text-muted"><%= comment.created_at.strftime("%Y-%m-%d, %H:%M") %></span>
+  </div>
+  <div class="panel-body">
+    <%= comment.body %>
+  </div>
+</div>
+
+<% if can? :destroy, comment%>
+<p>
+  <%= link_to "#{t('actions.delete')} #{t('activerecord.models.comment').downcase}",
+              [comment.article, comment],
+              method: :delete,
+              class: 'btn btn-default btn-m',
+              data: { confirm: t('messages.confirm') } %>
+</p>
+<% end %>
