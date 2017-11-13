@@ -8,11 +8,9 @@ class Ability
       can :read, :all
     else
       # All registered users
-      can [:read, :write], :all
+      can [:read, :create], :all
       # Articles owner
-      can :update, Article do |article|
-        article.try(:user) == user
-      end
+      can [:update, :destroy], ArticleDecorator, :user_id => user.id
     end
   end
 end

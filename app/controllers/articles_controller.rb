@@ -8,12 +8,12 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new.decorate
-    authorize! :write, @article
+    authorize! :create, @article
   end
 
   def create
     @article = current_user.articles.create(article_params)
-    authorize! :write, @article
+    authorize! :create, @article
     if @article.save
       redirect_to @article, notice: t('article.create.notice')
     else
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   def destroy
     authorize! :destroy, @article
     @article.destroy
-    redirect_to articles_url, notice: t('article.destroy.notice')
+    redirect_to feeds_url, notice: t('article.destroy.notice')
   end
 
   private
