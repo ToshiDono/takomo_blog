@@ -4,6 +4,5 @@ class ArticleDecorator < Draper::Decorator
   include HasUserData
 
   decorates_association :comments
-
   delegate_all
 end

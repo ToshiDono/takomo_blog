@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><%= @article.title %></h3>
-    <p class="blog-post-meta"><%= @article.human_created_at %> <%= @article.users_full_name %></p>
+    <p class="blog-post-meta"><%= @article.human_date_created_at %> <%= @article.users_full_name %></p>
   </div>
   <div class="panel-body">
     <%= @article.text %>
