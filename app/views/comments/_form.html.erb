@@ -1,5 +1,5 @@
 </div>
-  <%= simple_form_for [ @article, @article.comments.build ] do |f|%>
+  <%= simple_form_for @comment, url: "#{@article.id}/comments/", method: :post do |f|%>
     <%= f.input :body, as: :text %>
     <%= f.button :submit, t('actions.save') %>
   <% end%>

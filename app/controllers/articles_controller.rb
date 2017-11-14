@@ -2,6 +2,8 @@ class ArticlesController < BaseController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def show
+    @comments = Comment.where(article_id: @article.id)
+    @comment = Comment.new
     authorize! :read, @article
   end
 

@@ -1,9 +1,9 @@
-class ArticleDecorator < Draper::Decorator
+class CommentDecorator < Draper::Decorator
   include PageData
   include HasHumanDate
   include HasUserData
 
-  decorates_association :comments
+  decorates :comment
 
   delegate_all
 end
