@@ -1,9 +1,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <strong class="panel-title">
-      <%= comment.user.name %> <%= comment.user.surname %>
+      <%= comment.users_full_name %>
     </strong>
-    <span class="text-muted"><%= comment.created_at.strftime("%Y-%m-%d, %H:%M") %></span>
+    <span class="text-muted"><%= comment.human_created_at %></span>
   </div>
   <div class="panel-body">
     <%= comment.body %>
