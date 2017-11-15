@@ -11,7 +11,7 @@ class ArticlesController < BaseController
   end
 
   def create
-    @article = current_user.articles.create(article_params)
+    @article = current_user.articles.create(article_params).decorate
     authorize! :create, @article
     if @article.valid?
       redirect_to @article, notice: t('article.create.notice')
@@ -30,7 +30,7 @@ class ArticlesController < BaseController
     if @article.update(params)
       redirect_to @article, notice: t('article.update.notice')
     else
-      render :new
+      render :edit
     end
   end
 
