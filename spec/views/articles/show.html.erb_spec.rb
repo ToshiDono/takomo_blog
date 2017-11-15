@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'articles/show', type: :view do
-  let(:article) { create(:article) }
+  let(:article) { create(:article).decorate }
   let(:user) { create(:user) }
   before { sign_in user }
   let!(:item) do
