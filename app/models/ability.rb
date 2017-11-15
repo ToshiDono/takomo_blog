@@ -10,7 +10,7 @@ class Ability
       # All registered users
       can [:read, :create], :all
       # Articles owner
-      can [:update, :destroy], [ArticleDecorator, CommentDecorator, Comment], :user_id => user.id
+      can [:update, :destroy], [ArticleDecorator, CommentDecorator, Comment], user_id: user.id
     end
   end
 end
