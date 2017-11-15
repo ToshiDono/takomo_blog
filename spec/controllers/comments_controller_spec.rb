@@ -1,19 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
+  render_views
 
-  describe "GET #create" do
-    it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
+  let(:user) { create(:user) }
+
+  before { sign_in user }
+
+  let(:article) { create(:article) }
+  let(:comment) { create(:comment, article: article, user: user) }
+
+  describe 'POST #create' do
+    it 'redirect to article#show' do
+      post :create, params: { comment: attributes_for(:comment), article_id: article.id }
+      expect(response).to redirect_to assigns(:article)
     end
   end
 
-  describe "GET #destroy" do
-    it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
+  describe 'POST #destroy' do
+    it 'returns http 302' do
+      delete :destroy, params: { id: comment.id, article_id: article.id }
+      expect(response).to redirect_to assigns(:article)
     end
   end
-
 end
