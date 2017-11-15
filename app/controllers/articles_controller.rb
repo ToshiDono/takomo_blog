@@ -13,7 +13,7 @@ class ArticlesController < BaseController
   def create
     @article = current_user.articles.create(article_params)
     authorize! :create, @article
-    if @article.save
+    if @article.valid?
       redirect_to @article, notice: t('article.create.notice')
     else
       render :new

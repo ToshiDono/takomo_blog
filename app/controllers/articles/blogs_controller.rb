@@ -1,7 +1,7 @@
 module Articles
   class BlogsController < ApplicationController
     def show
-      @articles = Article.where(user_id: current_user.id)
+      @articles = current_user.articles
     end
   end
 end
