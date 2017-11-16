@@ -3,10 +3,10 @@ source 'https://rubygems.org'
 ruby '~> 2.4.0'
 
 gem 'bootstrap-sass', '~> 3.3.7'
-gem 'devise'
-gem 'draper'
 gem 'cancancan', '~> 2.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise'
+gem 'draper'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg', '~> 0.21.0'
@@ -14,8 +14,8 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
-gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -25,7 +25,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '~> 0.49.1', require: false
-  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0'
 end
 

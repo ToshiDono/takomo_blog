@@ -18,6 +18,7 @@
 !/tmp/.keep
 .idea
 coverage
+.envrc
 
 /node_modules
 /yarn-error.log

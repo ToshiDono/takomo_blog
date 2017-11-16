@@ -2,8 +2,7 @@ class CommentsController < BaseController
   before_action :set_article
 
   def create
-    params = comment_params.merge(user_id: current_user.id).merge(article_id: @article.id)
-    @comment = @article.comments.create(params)
+    @comment = current_user.comments.create(comment_params.merge(article: @article))
     authorize! :create, @comment
     redirect_to article_path(@article)
   end
@@ -16,6 +15,7 @@ class CommentsController < BaseController
   end
 
   private
+
   def set_article
     @article = Article.find(params[:article_id])
   end

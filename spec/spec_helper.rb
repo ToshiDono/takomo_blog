@@ -16,3 +16,7 @@ RSpec.configure do |config|
   config.order = :random
   Kernel.srand config.seed
 end
+
+def user_sign_in
+  redirect_to('/user/sign_in')
+end

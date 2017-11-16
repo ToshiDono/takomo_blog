@@ -7,6 +7,4 @@ RSpec.describe Comment, type: :model do
   it { is_expected.to belong_to :article }
 
   it { is_expected.to validate_presence_of(:body) }
-  it { is_expected.to validate_presence_of(:user_id) }
-  it { is_expected.to validate_presence_of(:article_id) }
 end
