@@ -11,7 +11,7 @@ RSpec.describe ArticlesController, type: :controller do
     before { sign_in user }
 
     describe 'GET #show' do
-      before { get :show, params: { id: article.id} }
+      before { get :show, params: { id: article.id }}
 
       it 'returns http success' do
         expect(response).to have_http_status(:success)
@@ -39,7 +39,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'GET #edit' do
-      before { get :edit, params: { id: article.id} }
+      before { get :edit, params: { id: article.id }}
 
       it 'returns http success' do
         expect(response).to have_http_status(:success)
@@ -60,7 +60,7 @@ RSpec.describe ArticlesController, type: :controller do
 
       context 'not valid data' do
         it 'renders the new template' do
-          post :create, params: { article: { title: nil } }
+          post :create, params: { article: { title: nil }}
           expect(response).to render_template(:new)
         end
       end

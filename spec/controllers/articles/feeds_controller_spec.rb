@@ -13,7 +13,6 @@ RSpec.describe Articles::FeedsController, type: :controller do
   let!(:article_3) { create(:article, user: user_2) }
 
   describe 'GET #index' do
-
     before { get :index }
 
     it 'returns http success' do

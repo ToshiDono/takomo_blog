@@ -13,8 +13,7 @@ RSpec.describe Articles::BlogsController, type: :controller do
   let!(:article_3) { create(:article, user: user_2) }
 
   describe 'GET #show' do
-
-    before { get :show, params: { id: user_1.id} }
+    before { get :show, params: { id: user_1.id }}
 
     it 'returns http success' do
       expect(response).to have_http_status(:success)

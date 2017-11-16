@@ -48,7 +48,7 @@ RSpec.describe 'articles/_form', type: :view do
     end
 
     it 'page have article text' do
-      expect(rendered).to have_selector("textarea#article_text", text: article.text)
+      expect(rendered).to have_selector('textarea#article_text', text: article.text)
     end
   end
 end
